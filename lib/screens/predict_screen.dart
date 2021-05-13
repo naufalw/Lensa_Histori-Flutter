@@ -15,10 +15,10 @@ class _PredictScreenState extends State<PredictScreen> {
   detectImage() async {
     imageFile = widget.imageFile;
     var output = await Tflite.runModelOnImage(
-        path: imageFile.path,
-        imageMean: 127.5,
-        imageStd: 127.5,
-        threshold: 0.15);
+      path: imageFile.path,
+      imageMean: 127.5,
+      imageStd: 127.5,
+    );
     setState(() {
       _output = output;
       print(_output);
